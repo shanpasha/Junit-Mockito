@@ -9,10 +9,15 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.slf4j.LoggerFactory;
 
 import com.SimpleExample.Calculator;
 
+import ch.qos.logback.classic.Logger;
+
 public class TestCasesForAddition {
+	
+	org.slf4j.Logger log=LoggerFactory.getLogger(TestCasesForAddition.class);
 	public static Calculator cal=new Calculator();
 	
     @Before
@@ -44,6 +49,8 @@ public class TestCasesForAddition {
 	public void test() {
 	
 		System.out.println("test1");
+		int sum=cal.addition(10, 20);
+		log.info("method{}",sum);
 		assertEquals(30,cal.addition(10, 20));
     }
 		
